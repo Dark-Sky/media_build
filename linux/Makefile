@@ -64,8 +64,10 @@ DATE := `git --git-dir $(DIR)/.git log -n1 '--pretty=format:%h %ai' |perl -ne 'p
 #TODAY_TAR := linux-media-${DATE}.tar
 TODAY_TAR := linux-media-LATEST.tar
 TODAY_TAR_MD5 := ${TODAY_TAR}.bz2.md5
-LATEST_TAR := https://bitbucket.org/CrazyCat/media_build/downloads/linux-media-LATEST.tar.bz2
-LATEST_TAR_MD5 := https://bitbucket.org/CrazyCat/media_build/downloads/linux-media-LATEST.tar.bz2.md5
+#LATEST_TAR := https://bitbucket.org/CrazyCat/media_build/downloads/linux-media-LATEST.tar.bz2
+#LATEST_TAR_MD5 := https://bitbucket.org/CrazyCat/media_build/downloads/linux-media-LATEST.tar.bz2.md5
+LATEST_TAR := https://bitbucket.org/majortom/media_build_udl/downloads/linux-media-LATEST.tar.bz2
+LATEST_TAR_MD5 := https://bitbucket.org/majortom/media_build_udl/downloads/linux-media-LATEST.tar.bz2.md5
 
 default:
 	make -C ..
