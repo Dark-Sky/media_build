@@ -67,8 +67,8 @@ TODAY_TAR := linux-media-LATEST.tar
 TODAY_TAR_MD5 := ${TODAY_TAR}.bz2.md5
 #LATEST_TAR := https://bitbucket.org/CrazyCat/media_build/downloads/linux-media-LATEST.tar.bz2
 #LATEST_TAR_MD5 := https://bitbucket.org/CrazyCat/media_build/downloads/linux-media-LATEST.tar.bz2.md5
-LATEST_TAR := https://bitbucket.org/majortom/media_build_udl/downloads/linux-media-LATEST.tar.bz2
-LATEST_TAR_MD5 := https://bitbucket.org/majortom/media_build_udl/downloads/linux-media-LATEST.tar.bz2.md5
+LATEST_TAR := https://bitbucket.org/majortom/media_build/downloads/linux-media-LATEST.tar.bz2
+LATEST_TAR_MD5 := https://bitbucket.org/majortom/media_build/downloads/linux-media-LATEST.tar.bz2.md5
 
 default:
 	make -C ..
@@ -128,7 +128,7 @@ dir: clean
 	./use_dir.pl $(DIR)
 
 distclean: clean
-	-rm -f linux-media.tar.bz2 linux-media.tar.bz2.md5
+	-rm -rf linux-media.tar.bz2 linux-media.tar.bz2.md5 mm
 
 apply_patches apply-patches:
 	@if [ -e .linked_dir ]; then ./use_dir.pl --recheck --silent; fi
