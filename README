@@ -41,3 +41,10 @@ For example, a typical procedure to develop a new patch would be:
 	(some procedure to test the "foo" driver)
 	~/media $ git diff >/tmp/my_changes.patch
 	(email /tmp/my_changes.patch inlined to linux-media@vger.kernel.org)
+
+Some other notes that may be useful:
+To clean the tree in order to start over:
+       make -C linux distclean
+To create a new todaytar of the latest media drivers:
+       make -C linux todaytar DIR=/path/to/full_media_tree
+
