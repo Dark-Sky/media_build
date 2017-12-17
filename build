@@ -448,7 +448,8 @@ if (@git == 2) {
 		if (!$local) {
 			print "Getting the latest Kernel tree. This will take some time\n";
 			if ($depth) {
-				run("git clone --origin '$rname/$git[1]' git://linuxtv.org/media_tree.git media $depth",
+				#run("git clone --origin '$rname/$git[1]' git://linuxtv.org/media_tree.git media $depth",
+				run("git clone --origin '$rname/$git[1]' https://bitbucket.org/updatelee/v4l-updatelee.git media $depth",
 					"Can't clone from the upstream tree");
 			} else {
 				run("git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git media $depth",
@@ -524,7 +525,7 @@ if (@git == 2) {
 	print "****************************\n";
 	print "Updating the building system\n";
 	print "****************************\n";
-	system("git pull https://bitbucket.org/CrazyCat/media_build.git master");
+	system("git pull https://bitbucket.org/majortom/media_build.git master");
 
 	run("make -C linux/ download", "Download failed");
 	run("make -C linux/ untar", "Untar failed");
@@ -546,8 +547,11 @@ print "******************\n";
 print "* Start building *\n";
 print "******************\n";
 
+chomp(my $cpu_count = `cat /proc/cpuinfo | grep -c -P '^processor\\s+:'`);
+print("CPUs: $cpu_count\n");
+
 run("make allyesconfig", "can't select all drivers");
-run("make -j5", "build failed");
+run("make -j$cpu_count", "build failed");
 
 print "**********************************************************\n";
 print "* Compilation finished. Use 'make install' to install them\n";
