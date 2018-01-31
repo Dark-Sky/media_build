@@ -25,6 +25,12 @@ add api_version.patch
 add pr_fmt.patch
 add debug.patch
 add drx39xxj.patch
+add tda18273.c-include-path-fix.patch
+
+[4.14.255]
+add v4.14_compiler_h.patch
+add v4.14_saa7146_timer_cast.patch
+add v4.14_module_param_call.patch
 
 [4.12.255]
 add v4.12_revert_solo6x10_copykerneluser.patch
@@ -57,6 +63,9 @@ add v4.5_uvc_super_plus.patch
 [4.4.255]
 add v4.4_gpio_chip_parent.patch
 
+[4.3.255]
+add v4.3_add_autorepeat_handling.patch
+
 [4.2.255]
 add v4.2_atomic64.patch
 add v4.2_frame_vector.patch
@@ -75,6 +84,7 @@ add v3.19_get_user_pages_locked.patch
 
 [3.18.255]
 add v3.18_drop_property_h.patch
+add v3.18_ktime_get_real_seconds.patch
 
 [3.17.255]
 add v3.17_fix_clamp.patch

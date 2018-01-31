@@ -32,8 +32,7 @@ diff --git a/drivers/media/common/saa7146/saa7146_i2c.c b/drivers/media/common/s
 index 75897f95e4b4..6d5c3ea28e1c 100644
 --- a/drivers/media/common/saa7146/saa7146_i2c.c
 +++ b/drivers/media/common/saa7146/saa7146_i2c.c
-@@ -1,4 +1,5 @@
- // SPDX-License-Identifier: GPL-2.0
+@@ -2,3 +1,4 @@
 +#undef pr_fmt
  #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
  
