@@ -1,35 +1,24 @@
-This is an experimental build system for media drivers.
-All files on this tree are covered by GPLv2, as stated at COPYING file.
+# This is an experimental build system for media drivers.
+# All files on this tree are covered by GPLv2, as stated at COPYING file.
 
-Usage:
+# This tree is for compiling updatelee's modules for use with his updateDVB.
 
-Just call the build utility:
-	$ ./build
+# Usage:
 
-Then, install the drivers as root, with:
-	# make install
+git clone https://bitbucket.org/dark-sky/media_build_udl
+cd media_build_udl
+./build --main-git --depth 1
+sudo make install
+sudo cp media/include/uapi/linux/dvb/*.h /usr/include/linux/dvb/
+cd media/firmware
+sudo make install
+sudo reboot
 
-In order to test, unload old drivers with:
-	# make rmmod
+# If you're developing a new driver or patch use the same compile 
+# procedure as above.
 
-Then modprobe the driver you want to test. For example, to load driver 'foo':
-	# modprobe foo
-
-
-If you're developing a new driver or patch, it is better to use:
-	$ ./build --main-git
-
-Then, install the drivers as root, with:
-	# make install
-
-In order to test, unload old drivers with:
-	# make rmmod
-
-Then modprobe the driver you want to test. For example:
-	# modprobe bttv
-
-In this case, in order to modify something, you should edit the file at
-the media/ subdir.
+# In this case, in order to modify something, you should edit the file at
+# the media/ subdir.
 
 For example, a typical procedure to develop a new patch would be:
 
