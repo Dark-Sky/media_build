@@ -9,7 +9,7 @@
 
 sudo apt-get install git build-essential linux-headers-generic ncurses-dev bc patchutils wget libdigest-sha-perl libproc-processtable-perl fakeroot
 
-git clone https://bitbucket.org/dark-sky/media_build_udl
+git clone https://bitbucket.org/majortom/media_build
 cd media_build_udl
 ./build --main-git --depth 1
 sudo make install
