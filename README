@@ -9,17 +9,24 @@
 
 sudo apt-get install git build-essential linux-headers-generic ncurses-dev bc patchutils wget libdigest-sha-perl libproc-processtable-perl fakeroot
 
+# For a normal compile to just apply UDL's kernel modules to your kernel use this procedure.
+# It downloads a snapshot (@8M compressed tarball) of only the needed headers to compile UDL's modules.
+
+git clone https://bitbucket.org/majortom/media_build
+cd media_build_udl
+./build
+sudo make install
+sudo cp sanitized-dvb-headers/* /usr/include/linux/dvb/
+sudo reboot
+
+# If you're developing a new driver:
+
 git clone https://bitbucket.org/majortom/media_build
 cd media_build_udl
 ./build --main-git --depth 1
 sudo make install
-sudo cp media/include/uapi/linux/dvb/*.h /usr/include/linux/dvb/
-cd media/firmware
-sudo make install
+sudo cp sanitized-dvb-headers/* /usr/include/linux/dvb/
 sudo reboot
-
-# If you're developing a new driver or patch use the same compile 
-# procedure as above.
 
 # In this case, in order to modify something, you should edit the file at
 # the media/ subdir.
@@ -36,8 +43,11 @@ For example, a typical procedure to develop a new patch would be:
 	(email /tmp/my_changes.patch inlined to linux-media@vger.kernel.org)
 
 Some other notes that may be useful:
+
 To clean the tree in order to start over:
        make -C linux distclean
+To clean the tree to remove all files so you can compile for another kernel version:
+       make cleanall
 To create a new todaytar of the latest media drivers:
        make -C linux todaytar DIR=/path/to/full_media_tree
 
