@@ -19,7 +19,7 @@ sudo make install
 sudo cp sanitized-dvb-headers/* /usr/include/linux/dvb/
 sudo reboot
 
-# If you're developing a new driver:
+# If you're developing a new driver or patch:
 
 git clone https://bitbucket.org/majortom/media_build
 cd media_build_udl
