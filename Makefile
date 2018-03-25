@@ -13,6 +13,7 @@ all:
 
 install:
 	$(MAKE) -C $(BUILD_DIR) install
+	$(MAKE) -C v4l/firmware install
 
 # Hmm, .PHONY does not work with wildcard rules :-(
 SPECS = media-specs

@@ -7,7 +7,7 @@
 
 # First install depends:
 
-sudo apt-get install git build-essential linux-headers-generic ncurses-dev bc patchutils wget libdigest-sha-perl libproc-processtable-perl fakeroot
+sudo apt-get install git build-essential linux-headers-generic ncurses-dev bc patchutils wget libdigest-sha-perl libproc-processtable-perl fakeroot libelf-dev libssl-dev bison flex pigz
 
 # For a normal compile to just apply UDL's kernel modules to your kernel use this procedure.
 # It downloads a snapshot (@8M compressed tarball) of only the needed headers to compile UDL's modules.
