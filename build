@@ -25,7 +25,7 @@ my @git;
 #my $firmware_tarball = "dvb-firmwares.tar.bz2";
 my $main_git_url = "https://bitbucket.org/updatelee/v4l-updatelee.git";
 my $main_branch = "master";
-my $firmware_url = "https://bitbucket.org/CrazyCat/media_build/downloads";
+my $firmware_url = "https://raw.githubusercontent.com/Dark-Sky/media_build/70631cada90b733a8741e226c02e907b0588ebd4";
 my $firmware_tarball = "dvb-firmwares.tar.bz2";
 
 GetOptions('v|verbose' => \$level,
@@ -525,7 +525,7 @@ if (@git == 2) {
 	print "****************************\n";
 	print "Updating the building system\n";
 	print "****************************\n";
-	system("git pull https://bitbucket.org/majortom/media_build.git master");
+	system("git pull https://github.com/Dark-Sky/media_build.git master");
 
 	run("make -C linux/ download", "Download failed");
 	run("make -C linux/ untar", "Untar failed");

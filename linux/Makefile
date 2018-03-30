@@ -67,8 +67,8 @@ TODAY_TAR := linux-media-LATEST.tar
 TODAY_TAR_MD5 := ${TODAY_TAR}.bz2.md5
 #LATEST_TAR := https://bitbucket.org/CrazyCat/media_build/downloads/linux-media-LATEST.tar.bz2
 #LATEST_TAR_MD5 := https://bitbucket.org/CrazyCat/media_build/downloads/linux-media-LATEST.tar.bz2.md5
-LATEST_TAR := https://bitbucket.org/majortom/media_build/downloads/linux-media-LATEST.tar.bz2
-LATEST_TAR_MD5 := https://bitbucket.org/majortom/media_build/downloads/linux-media-LATEST.tar.bz2.md5
+LATEST_TAR := https://raw.githubusercontent.com/Dark-Sky/media_build/70631cada90b733a8741e226c02e907b0588ebd4/linux-media-LATEST.tar.bz2
+LATEST_TAR_MD5 := https://raw.githubusercontent.com/Dark-Sky/media_build/70631cada90b733a8741e226c02e907b0588ebd4/linux-media-LATEST.tar.bz2.md5
 
 default:
 	make -C ..

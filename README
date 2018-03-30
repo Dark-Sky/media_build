@@ -12,7 +12,7 @@ sudo apt-get install git build-essential linux-headers-generic ncurses-dev bc pa
 # For a normal compile to just apply UDL's kernel modules to your kernel use this procedure.
 # It downloads a snapshot (@8M compressed tarball) of only the needed headers to compile UDL's modules.
 
-git clone https://bitbucket.org/majortom/media_build
+git clone https://github.com/Dark-Sky/media_build.git
 cd media_build_udl
 ./build
 sudo make install
@@ -21,7 +21,7 @@ sudo reboot
 
 # If you're developing a new driver or patch:
 
-git clone https://bitbucket.org/majortom/media_build
+git clone https://github.com/Dark-Sky/media_build.git
 cd media_build_udl
 ./build --main-git --depth 1
 sudo make install
