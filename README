@@ -49,5 +49,5 @@ To clean the tree in order to start over:
 To clean the tree to remove all files so you can compile for another kernel version:
        make cleanall
 To create a new todaytar of the latest media drivers:
-       make -C linux todaytar DIR=/path/to/full_media_tree
+       make -C linux todaytar DIR=/full/path-to/medial_build/media
 
